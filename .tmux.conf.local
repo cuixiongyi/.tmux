@@ -5,6 +5,9 @@
 #         Copyright 2012— Gregory Pakosz (@gpakosz).
 
 
+# Override the shared SSH agent socket with a per-machine path.
+run-shell 'host=$(hostname -f 2>/dev/null || hostname); tmux set-environment -g SSH_AUTH_SOCK "$HOME/.tmp/ssh-agent/${host}.sock"'
+
 # -- navigation ----------------------------------------------------------------
 
 # if you're running tmux within iTerm2
